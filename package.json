@@ -1,7 +1,7 @@
 {
   "name": "generator-plum",
   "version": "1.0.0",
-  "description": "Yeoman generator",
+  "description": "Yeoman generator for plum.",
   "license": "MIT",
   "repository": "plum-css/generator-plum",
   "author": {
