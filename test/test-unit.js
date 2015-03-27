@@ -18,7 +18,8 @@ describe('Plum:unit', function () {
 
   it('creates files', function () {
     assert.file([
-      'units/_default.scss'
+      'units/default/_default.scss',
+      'units/default/templates/example.hbs'
     ]);
   });
 });

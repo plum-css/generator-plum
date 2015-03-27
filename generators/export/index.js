@@ -9,7 +9,7 @@ module.exports = yeoman.generators.Base.extend({
 
   location: 'exports',
 
-  files: ['export'],
+  stylesheets: ['export'],
 
   initializing: function () {
     this.argument('name', {
@@ -28,7 +28,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   configuring: function () {
-    this.filePaths = this.files.map(function(file) {
+    this.filePaths = this.stylesheets.map(function(file) {
       return {
         dest: this.location + '/' + this.name + '.scss',
         src: '_' + file + '.scss'

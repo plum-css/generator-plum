@@ -10,17 +10,17 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'core',
 
-  files: ['reset', 'base'],
+  stylesheets: ['reset', 'base'],
 
   configuring: function () {
-    this.filePaths = this.files.map(function(file) {
+    this.filePaths = this.stylesheets.map(function(file) {
       return {
         dest: this.location + '/_' + file + '.scss',
         src: '_' + file + '.scss'
       };
     }.bind(this));
 
-    this.importPaths = this.files.map(function(file) {
+    this.importPaths = this.stylesheets.map(function(file) {
       return '../' + this.location + '/' + file;
     }.bind(this));
   }
