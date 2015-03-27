@@ -22,7 +22,8 @@ describe('Plum:module', function () {
       'modules/default/_layout.scss',
       'modules/default/_modifier.scss',
       'modules/default/_state.scss',
-      'modules/default/_theme.scss'
+      'modules/default/_theme.scss',
+      'modules/default/templates/example.hbs'
     ]);
   });
 });
