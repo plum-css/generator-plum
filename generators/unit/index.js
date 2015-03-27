@@ -17,7 +17,7 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
   configuring: function () {
     this.stylesheetPaths = this.stylesheets.map(function(file) {
       return {
-        dest: this.location + '/' + this.name + '/_' + file + '.scss',
+        dest: this.location + '/' + this.name + '/_' + this.name + '.scss',
         src: '_' + file + '.scss'
       };
     }.bind(this));
