@@ -10,18 +10,18 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'core',
 
-  stylesheets: ['reset', 'base'],
+  stylesheets: ['core'],
 
   configuring: function () {
     this.filePaths = this.stylesheets.map(function(file) {
       return {
-        dest: this.location + '/_' + file + '.scss',
+        dest: this.location + '/_' + this.name + '.scss',
         src: '_' + file + '.scss'
       };
     }.bind(this));
 
     this.importPaths = this.stylesheets.map(function(file) {
-      return '../' + this.location + '/' + file;
+      return '../' + this.location + '/' + this.name;
     }.bind(this));
   }
 }));

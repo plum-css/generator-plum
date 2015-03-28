@@ -18,8 +18,7 @@ describe('Plum:core', function () {
 
   it('creates files', function () {
     assert.file([
-      'core/_base.scss',
-      'core/_reset.scss'
+      'core/_default.scss',
     ]);
   });
 });
