@@ -12,16 +12,27 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   stylesheets: ['layout'],
 
+  templates: ['template'],
+
   configuring: function () {
-    this.filePaths = this.stylesheets.map(function(file) {
+    this.stylesheetPaths = this.stylesheets.map(function(file) {
       return {
-        dest: this.location + '/_' + this.name + '.scss',
+        dest: this.location + '/' + this.name + '/_' + this.name + '.scss',
         src: '_' + file + '.scss'
       };
     }.bind(this));
 
-    this.importPaths = this.stylesheets.map(function(file) {
-      return '../' + this.location + '/' + this.name;
+    this.templatePaths = this.templates.map(function(file) {
+      return {
+        dest: this.location + '/' + this.name + '/templates/example.hbs',
+        src: 'templates/_' + file + '.hbs'
+      };
     }.bind(this));
+
+    this.importPaths = this.stylesheets.map(function(file) {
+      return '../' + this.location + '/' + this.name + '/' + this.name;
+    }.bind(this));
+
+    this.filePaths = this.stylesheetPaths.concat(this.templatePaths);
   }
 }));

@@ -18,7 +18,8 @@ describe('Plum:layout', function () {
 
   it('creates files', function () {
     assert.file([
-      'layouts/_default.scss'
+      'layouts/default/_default.scss',
+      'layouts/default/templates/example.hbs'
     ]);
   });
 });
