@@ -30,7 +30,7 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
     }.bind(this));
 
     this.importPaths = this.stylesheets.map(function(file) {
-      return '../' + this.location + '/' + this.name + '/' + file;
+      return '../' + this.location + '/' + this.name + '/' + this.name;
     }.bind(this));
 
     this.filePaths = this.stylesheetPaths.concat(this.templatePaths);
