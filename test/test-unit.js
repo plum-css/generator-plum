@@ -19,7 +19,7 @@ describe('Plum:unit', function () {
   it('creates files', function () {
     assert.file([
       'units/default/_default.scss',
-      'units/default/templates/example.hbs'
+      'units/default/tests/fixtures/default.hbs'
     ]);
   });
 });

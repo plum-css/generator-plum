@@ -23,7 +23,7 @@ describe('Plum:module', function () {
       'modules/default/_modifier.scss',
       'modules/default/_state.scss',
       'modules/default/_theme.scss',
-      'modules/default/templates/example.hbs'
+      'modules/default/tests/fixtures/default.hbs'
     ]);
   });
 });
