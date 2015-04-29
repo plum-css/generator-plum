@@ -24,8 +24,8 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
     this.templatePaths = this.templates.map(function(file) {
       return {
-        dest: this.location + '/' + this.name + '/templates/example.hbs',
-        src: 'templates/_' + file + '.hbs'
+        dest: this.location + '/' + this.name + '/tests/fixtures/' + this.name + '.hbs',
+        src: 'tests/fixtures/_' + file + '.hbs'
       };
     }.bind(this));
 
