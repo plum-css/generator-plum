@@ -14,6 +14,8 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   templates: ['template'],
 
+  tests: ['test'],
+
   configuring: function () {
     this.stylesheetPaths = this.stylesheets.map(function(file) {
       return {
@@ -29,10 +31,17 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
       };
     }.bind(this));
 
+    this.testPaths = this.tests.map(function(file) {
+      return {
+        dest: this.location + '/' + this.name + '/tests/' + this.name + '.js',
+        src: 'tests/_' + file + '.js'
+      };
+    }.bind(this));
+
     this.importPaths = this.stylesheets.map(function(file) {
       return '../' + this.location + '/' + this.name + '/' + this.name;
     }.bind(this));
 
-    this.filePaths = this.stylesheetPaths.concat(this.templatePaths);
+    this.filePaths = this.stylesheetPaths.concat(this.templatePaths, this.testPaths);
   }
 }));

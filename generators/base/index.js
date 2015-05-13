@@ -57,7 +57,10 @@ module.exports = {
     writing: function () {
       this.filePaths.forEach(function(path) {
         this.fs.copyTpl(this.templatePath(path.src), this.destinationPath(path.dest), {
-          name: this.name
+          name: this.name,
+          type: this.type,
+          location: this.location
+
         });
       }.bind(this));
     },
