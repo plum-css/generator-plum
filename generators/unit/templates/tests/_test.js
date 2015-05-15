@@ -1,4 +1,4 @@
-casper.test.begin( 'Visual regression test for the <%= name %> <%= type %>.', function(test) {
+casper.test.begin('Visual regression test for the <%= name %> <%= type %>.', function(test) {
 
   casper.configure('<%= location %>/<%= name %>')
 
