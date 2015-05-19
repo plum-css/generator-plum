@@ -1,14 +1,14 @@
 casper.test.begin('Visual regression test for the <%= name %> <%= type %>.', function(test) {
 
-  casper.configure('<%= location %>/<%= name %>')
+  casper.loadPath('<%= location %>/<%= name %>')
 
-  .load('<%= name %>.html')
+  .loadFixture('<%= name %>')
 
-  .then(function (){
+  .then(function () {
     phantomcss.screenshot('.<%= name %>', '<%= name %> <%= type %>');
   })
 
-  .run( function () {
+  .run(function () {
     test.done();
   });
 
