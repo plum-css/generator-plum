@@ -4,11 +4,11 @@ casper.test.begin('Visual regression test for the <%= name %> <%= type %>.', fun
 
   .loadFixture('<%= name %>')
 
-  .then(function (){
+  .then(function () {
     phantomcss.screenshot('.<%= name %>', '<%= name %> <%= type %>');
   })
 
-  .run( function () {
+  .run(function () {
     test.done();
   });
 
