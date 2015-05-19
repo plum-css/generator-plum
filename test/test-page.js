@@ -18,7 +18,9 @@ describe('Plum:page', function () {
 
   it('creates files', function () {
     assert.file([
-      'pages/_default.scss'
+      'pages/default/_default.scss',
+      'pages/default/tests/fixtures/default.hbs',
+      'pages/default/tests/default.js'
     ]);
   });
 });
