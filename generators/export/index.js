@@ -19,6 +19,8 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   prompting: function () {
+    var done = this.async();
+
     if (!this.name) {
       prompts.askName.apply(this, [this.type, function(answer) {
         this.name = answer;
