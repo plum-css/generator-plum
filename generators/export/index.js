@@ -26,6 +26,8 @@ module.exports = yeoman.generators.Base.extend({
         this.name = answer;
         done();
       }.bind(this)]);
+    } else {
+      done();
     }
   },
 
