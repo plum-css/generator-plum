@@ -1,13 +1,22 @@
 'use strict';
 
+var update  = require('update-notifer');
 var imports = require('../../utils/imports.js');
 var prompts = require('../../utils/prompts.js');
+var pkg     = require('../../package.json');
 
 module.exports = {
 
   generator: {
 
     initializing: function () {
+
+      //  update the generator if that's applicable
+      update({
+        packageName:    pkg.name,
+        packageVersion: pkg.version
+      }).notify();
+
       if (!this.fs.exists(this.destinationPath('.yo-rc.json'))) {
         this.log(new Error('The generator should be run inside of your root css directory.'));
         process.exit(1);
