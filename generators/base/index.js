@@ -1,6 +1,6 @@
 'use strict';
 
-var update  = require('update-notifer');
+var update  = require('update-notifier');
 var imports = require('../../utils/imports.js');
 var prompts = require('../../utils/prompts.js');
 var pkg     = require('../../package.json');
