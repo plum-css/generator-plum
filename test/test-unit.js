@@ -18,7 +18,7 @@ describe('Plum:unit', function () {
 
   it('creates files', function () {
     assert.file([
-      'units/default/_default.scss',
+      'units/default/_index.scss',
       'units/default/tests/fixtures/default.hbs',
       'units/default/tests/default.js'
     ]);

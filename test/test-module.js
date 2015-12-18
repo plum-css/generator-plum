@@ -18,11 +18,12 @@ describe('Plum:module', function () {
 
   it('creates files', function () {
     assert.file([
-      'modules/default/_base.scss',
-      'modules/default/_layout.scss',
-      'modules/default/_modifier.scss',
-      'modules/default/_state.scss',
-      'modules/default/_theme.scss',
+      'modules/default/_index.scss',
+      'modules/default/partials/_base.scss',
+      'modules/default/partials/_layout.scss',
+      'modules/default/partials/_modifier.scss',
+      'modules/default/partials/_state.scss',
+      'modules/default/partials/_theme.scss',
       'modules/default/tests/fixtures/default.hbs',
       'modules/default/tests/default.js'
     ]);
