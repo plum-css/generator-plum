@@ -18,7 +18,7 @@ describe('Plum:layout', function () {
 
   it('creates files', function () {
     assert.file([
-      'layouts/default/_default.scss',
+      'layouts/default/_index.scss',
       'layouts/default/tests/fixtures/default.hbs',
       'layouts/default/tests/default.js'
     ]);
