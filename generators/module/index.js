@@ -10,18 +10,28 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'modules',
 
-  stylesheets: ['base', 'layout', 'modifier', 'state', 'theme'],
+  index: ['index'],
+
+  partials: ['base', 'layout', 'modifier', 'state', 'theme'],
 
   templates: ['template'],
 
   tests: ['test'],
 
   configuring: function () {
-    this.stylesheetPaths = this.stylesheets.map(function(file) {
+
+    this.indexPath = this.index.map(function(file){
       return {
         dest: this.location + '/' + this.name + '/_' + file + '.scss',
         src: '_' + file + '.scss'
-      };
+      }
+    }.bind(this));
+
+    this.partialsPath = this.partials.map(function(file){
+      return {
+        dest: this.location + '/' + this.name + '/partials/_' + file + '.scss',
+        src: '_' + file + '.scss'
+      }
     }.bind(this));
 
     this.templatePaths = this.templates.map(function(file) {
@@ -38,10 +48,10 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
       };
     }.bind(this));
 
-    this.importPaths = this.stylesheets.map(function(file) {
+    this.importPaths = this.index.map(function(file) {
       return '../' + this.location + '/' + this.name + '/' + file;
     }.bind(this));
 
-    this.filePaths = this.stylesheetPaths.concat(this.templatePaths, this.testPaths);
+    this.filePaths = this.partialsPath.concat(this.indexPath, this.templatePaths, this.testPaths);
   }
 }));

@@ -18,11 +18,12 @@ describe('Plum:config', function () {
 
   it('creates files', function () {
     assert.file([
-      'configs/default/_colors.scss',
-      'configs/default/_icons.scss',
-      'configs/default/_images.scss',
-      'configs/default/_layouts.scss',
-      'configs/default/_typography.scss'
+      'configs/default/_index.scss',
+      'configs/default/partials/_colors.scss',
+      'configs/default/partials/_icons.scss',
+      'configs/default/partials/_images.scss',
+      'configs/default/partials/_layouts.scss',
+      'configs/default/partials/_typography.scss'
     ]);
   });
 });

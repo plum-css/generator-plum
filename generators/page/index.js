@@ -10,7 +10,7 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'pages',
 
-  stylesheets: ['page'],
+  stylesheets: ['index'],
 
   templates: ['template'],
 
@@ -19,7 +19,7 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
   configuring: function () {
     this.stylesheetPaths = this.stylesheets.map(function(file) {
       return {
-        dest: this.location + '/' + this.name + '/_' + this.name + '.scss',
+        dest: this.location + '/' + this.name + '/_' + file + '.scss',
         src: '_' + file + '.scss'
       };
     }.bind(this));
@@ -39,7 +39,7 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
     }.bind(this));
 
     this.importPaths = this.stylesheets.map(function(file) {
-      return '../' + this.location + '/' + this.name + '/' + this.name;
+      return '../' + this.location + '/' + this.name + '/' + file;
     }.bind(this));
 
     this.filePaths = this.stylesheetPaths.concat(this.templatePaths, this.testPaths);

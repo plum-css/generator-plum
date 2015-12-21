@@ -10,17 +10,29 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'configs',
 
-  stylesheets: ['colors', 'icons', 'images', 'layouts', 'typography'],
+  index: ['index'],
+
+  partials: ['colors', 'icons', 'images', 'layouts', 'typography'],
 
   configuring: function () {
-    this.filePaths = this.stylesheets.map(function(file) {
+
+    this.indexPath = this.index.map(function(file){
       return {
         dest: this.location + '/' + this.name + '/_' + file + '.scss',
         src: '_' + file + '.scss'
-      };
+      }
     }.bind(this));
 
-    this.importPaths = this.stylesheets.map(function(file) {
+    this.partialsPath = this.partials.map(function(file){
+      return {
+        dest: this.location + '/' + this.name + '/partials/_' + file + '.scss',
+        src: '_' + file + '.scss'
+      }
+    }.bind(this));
+
+    this.filePaths = this.partialsPath.concat( this.indexPath );
+
+    this.importPaths = this.index.map(function(file) {
       return '../' + this.location + '/' + this.name + '/' + file;
     }.bind(this));
   }
