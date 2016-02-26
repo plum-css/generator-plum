@@ -19,6 +19,11 @@ describe('Plum:layout', function () {
   it('creates files', function () {
     assert.file([
       'layouts/default/_index.scss',
+      'layouts/default/config/_colors.scss',
+      'layouts/default/config/_icons.scss',
+      'layouts/default/config/_images.scss',
+      'layouts/default/config/_layouts.scss',
+      'layouts/default/config/_typography.scss',
       'layouts/default/tests/fixtures/default.hbs',
       'layouts/default/tests/default.js'
     ]);

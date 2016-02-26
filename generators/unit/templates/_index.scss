@@ -5,3 +5,8 @@
 // Markup: tests/fixtures/<%= name %>.hbs
 //
 // Styleguide units.<%= name %>
+@import "config/colors";
+@import "config/icons";
+@import "config/images";
+@import "config/layouts";
+@import "config/typography";

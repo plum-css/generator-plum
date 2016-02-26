@@ -19,6 +19,11 @@ describe('Plum:unit', function () {
   it('creates files', function () {
     assert.file([
       'units/default/_index.scss',
+      'units/default/config/_colors.scss',
+      'units/default/config/_icons.scss',
+      'units/default/config/_images.scss',
+      'units/default/config/_layouts.scss',
+      'units/default/config/_typography.scss',
       'units/default/tests/fixtures/default.hbs',
       'units/default/tests/default.js'
     ]);
