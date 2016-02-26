@@ -10,7 +10,7 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'layouts',
 
-  stylesheets: ['index'],
+  stylesheets: ['config', 'index'],
 
   templates: ['template'],
 
