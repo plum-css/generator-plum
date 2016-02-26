@@ -10,9 +10,11 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'units',
 
-  stylesheets: ['config', 'index'],
+  stylesheets: ['index'],
 
   templates: ['template'],
+
+  configs: ['colors', 'icons', 'images', 'layouts', 'typography'],
 
   tests: ['test'],
 
@@ -28,6 +30,13 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
       return {
         dest: this.location + '/' + this.name + '/tests/fixtures/' + this.name + '.hbs',
         src: 'tests/fixtures/_' + file + '.hbs'
+      };
+    }.bind(this));
+
+    this.configPaths = this.configs.map(function(file) {
+      return {
+        dest: this.location + '/' + this.name + '/config/_' + file,
+        src: '../../config/templates/_' + file + '.scss'
       };
     }.bind(this));
 

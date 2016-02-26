@@ -10,11 +10,13 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
 
   location: 'modules',
 
-  index: ['config', 'index'],
+  index: ['index'],
 
   partials: ['base', 'layout', 'modifier', 'state', 'theme'],
 
   templates: ['template'],
+
+  configs: ['colors', 'icons', 'images', 'layouts', 'typography'],
 
   tests: ['test'],
 
@@ -41,6 +43,13 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
       };
     }.bind(this));
 
+    this.configPaths = this.configs.map(function(file) {
+      return {
+        dest: this.location + '/' + this.name + '/config/_' + file,
+        src: '../../config/templates/_' + file + '.scss'
+      };
+    }.bind(this));
+
     this.testPaths = this.tests.map(function(file) {
       return {
         dest: this.location + '/' + this.name + '/tests/' + this.name + '.js',
@@ -52,6 +61,6 @@ module.exports = yeoman.generators.Base.extend(_.extend(base.generator,{
       return '../' + this.location + '/' + this.name + '/' + file;
     }.bind(this));
 
-    this.filePaths = this.partialsPath.concat(this.indexPath, this.templatePaths, this.testPaths);
+    this.filePaths = this.partialsPath.concat(this.indexPath, this.templatePaths, this.testPaths, this.configPaths);
   }
 }));
