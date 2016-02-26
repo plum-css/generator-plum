@@ -24,6 +24,11 @@ describe('Plum:module', function () {
       'modules/default/partials/_modifier.scss',
       'modules/default/partials/_state.scss',
       'modules/default/partials/_theme.scss',
+      'modules/default/config/_colors.scss',
+      'modules/default/config/_icons.scss',
+      'modules/default/config/_images.scss',
+      'modules/default/config/_layouts.scss',
+      'modules/default/config/_typography.scss',
       'modules/default/tests/fixtures/default.hbs',
       'modules/default/tests/default.js'
     ]);
